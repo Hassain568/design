@@ -46,7 +46,7 @@ $(document).ready(function(){
   <div>
   
 	<div class="col-xs-6">
-	 <a href="#" id="popover" data-toggle="popover" title="طقي صيفي" data-content="تي شيرت ازرق للرياضه من متجر الفالح">التفاصيل</a>
+	 <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="تي شيرت من متجر الفالح"> التفاصيل</a>
 	 </div>	 
   </div>
   
@@ -61,7 +61,7 @@ $(document).ready(function(){
 	
 <div>
 	<div class="col-xs-6">
-   <a href="#" id="popover" data-toggle="popover" title="طقم صيفي" data-content="سروال مطاطي من متجر الفالح">التفاصيل</a>
+   <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="سروال من متجر الفالح">التفاصيل</a>
 	</div>
 </div>	
  </div>
@@ -71,7 +71,7 @@ $(document).ready(function(){
 	</div>
 <div>	
 	<div class="col-xs-6">	
- <a href="#" id="popover" data-toggle="popover" title="طقم صيفي" data-content="حذاء رياضي من متجر ادي داس">التفاصيل</a>	</div>
+ <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="حذاء رياضي من متجر ادي داس">التفاصيل</a>	</div>
 </div>	
 </div>
 
