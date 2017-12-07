@@ -29,26 +29,8 @@ $row = mysqli_fetch_assoc($result);
 	}
 }
 	if(!$allow){
-?>
-<!doctype html>
-<html dir='rtl'>
-
-<head>
-    <meta charset='utf-8'>
-    <title>تسجيل الدخول</title>
-</head>
-
-<body>
-    <form method='post'>
-        الاسم:<input name='user'><br> المرور:
-        <input type='password' name='pass'>
-        <input type='submit'>
-    </form>
-    <?= $err ?>
-</body>
-
-</html>
-<?php
+		include("login.php");
+				
 exit();
 } 
 ?>

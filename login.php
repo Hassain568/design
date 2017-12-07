@@ -20,7 +20,7 @@
         input[type=text],
         input[type=password] {
             width: 100%;
-            padding: 12px 20px;
+            padding: 12px 12px;
             margin: 8px 0;
             display: inline-block;
             border: 1px solid #ccc;
@@ -43,7 +43,7 @@
 
         .cancelbtn {
             width: auto;
-            padding: 10px 18px;
+            padding:5px 5px;
             background-color: #f44336;
         }
 
@@ -74,11 +74,7 @@
 
         /* Change styles for span and cancel button on extra small screens */
 
-        @media screen and (max-width: 300px) {
-            span.psw {
-                display: block;
-                float: none;
-            }
+  
             .cancelbtn {
                 width: 100%;
             }
@@ -99,38 +95,37 @@
     <div class="topnav" id="myTopnav">
         <?php include("nav.php"); ?>
     </div>
-
+<div class="container">
     <h2>تسجيل الدخول</h2>
-    <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
 
 
-
+<?= @$err ?>
     <form action="add.php" method="post">
 
-        <div class="container">
+
             <label><b>اسم المستخدم</b></label>
-            <input type="text" placeholder="ادخل الاسم" name="uname" required>
+            <input type="text" placeholder="ادخل الاسم" name="user" required>
 
             <label><b>كلمة المرور</b></label>
-            <input type="password" placeholder="ادخل كلمة المرور" name="psw" required>
-            <button type="submit">تسجيل</button>
+            <input type="password" placeholder="ادخل كلمة المرور" name="pass" required>
+
+
+            <div style="background-color:#f1f1f1">
+            <button type="submit">تسجيل</button>               
+                <button type="reset" class="cancelbtn"> مسح </button>
 
             <input type="checkbox" checked="checked"> تذكرني
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" class="cancelbtn">الغاء </button>
-
 
 
             </div>
 
 
-        </div>
-        <span class="psw"> <a href="file:///F:/rwaf/sgin.html">إنشاء حساب?</a></span>
-        <br>
 
+        <span class="psw"> <a href="signup.php">إنشاء حساب?</a></span><br>
+        <br>
         <span class="psw"> <a href="#">نسيت كلمة المرور?</a></span>
     </form>
-
+</div>
 </body>
 
 </html>

@@ -27,7 +27,7 @@
 
                 <div class="col-lg-8 col-lg-offset-2">
 
-                    <h1>للمشاكل والأقتراحات الرجاء مراسلتنا</h1>
+                    <h1>للمشاكل والأقتراحات الرجاء مراسلتنا.</h1>
 <br>
                    
 
@@ -54,7 +54,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="form_message">الرسالة <font color="red">*</font></label>
-                    <textarea id="form_message" name="message" class="form-control" placeholder="اكتب رسالتك *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="اكتب رسالتك *" rows="4" required data-error="Please,leave us a message."></textarea>
                     <div class="help-block with-errors"></div>
                 </div>
             </div>

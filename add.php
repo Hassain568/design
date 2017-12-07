@@ -6,6 +6,7 @@ include("conn.php");
 <html dir="rtl">
 
 <head>
+   <title>اضافة صور ملابس</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -33,37 +34,31 @@ include("conn.php");
     <div class="container">
 
 
-        <h2 align="center" style="background-color: #A7A7A7">صفحة اضافة</h2>
+        <h2 align="center">اضافة صور ملابس</h2>
 
+   
+   
 
-
-
-
-
-
-
-
-
-        <?php 
-        
+          
+          
+        <?php 	
         if(@$_POST["Action"] == "addCloth"){
             
 $target_dir = "images/uploads/";
 $target_file = $target_dir . basename($_FILES["file"]["name"]);
 $uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
+$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);	
+		
+			 
 
-    /*$check = getimagesize($_FILES["file"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-*/
-    // Check if file already exists
+			
+			
+
+			
+			
+			
+			
+				
     if (file_exists($target_file)) {
         echo "Sorry, file already exists.";
         $uploadOk = 0;

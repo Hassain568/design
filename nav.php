@@ -28,7 +28,7 @@
    <?php } else{ ?> 
    
 	<li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> تسجيل</a></li>
-	<li><a href="add.php"><span class="glyphicon glyphicon-log-in"></span> دخول</a></li>
+	<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> دخول</a></li>
    <?php }
 		  ?>
    

@@ -52,8 +52,8 @@ include("conn.php");
                         while($row = mysqli_fetch_assoc($result)){
                             ?>
                 <div class="col-lg-3 col-md-4 col-xs-6">
-                    <a href="#" class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="images/uploads/<?= $row["pic"] ?>" alt="">
+                    <a class="d-block mb-4 h-100">
+                        <img class="img-fluid img-thumbnail" style="height:200px" src="images/uploads/<?= $row["pic"] ?>" alt="">
                     </a>
                 </div>
 

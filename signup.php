@@ -51,8 +51,13 @@ include("conn.php");
         }
 
         backbtn {
+            background-color: #4CAF50;
+            color: white;
             padding: 10px 10px;
-            background-color: green;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
         }
 
 

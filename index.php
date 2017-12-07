@@ -8,7 +8,7 @@ if(@$_GET["do"] == "logOut"){
 ?>
 <html>
 <head>
-  <title>maine</title>
+  <title>الرئيسيه</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -41,6 +41,8 @@ if(@$_GET["do"] == "logOut"){
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+       <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -50,19 +52,37 @@ if(@$_GET["do"] == "logOut"){
       </div>
 
       <div class="item">
-        <img src="AY2881_01_laydown.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-         <img src="tshirt.jpg" alt="New york" style=height:300px; style="width:30px;">
+        <img src="images/1.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+        <img src="images/jeans_black.png" alt="Chicago" style=height:100px; style="width:30px;">
+        <img src="images/Sport-Shoes.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+        
+        
       </div>
     
       <div class="item">
-        <img src="AY2881_01_laydown.jpg" alt="AY2881_01_laydown.jpg" style=height:300px; style="width:30px;">
-        <img src="tshirt.jpg" alt="tshirt" style=height:300px; style="width:30px;">
+      <img src="images/14.jpg" alt="Chicago" style=height:100px; style="width:30px;">       
+      <img src="images/srwal88.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+      <img src="images/sho02.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+      
       </div>
       
    
       <div class="item">
-        <img src="AY2881_01_laydown.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-         <img src="tshirt.jpg" alt="New york" style=height:300px; style="width:30px;">
+      <img src="images/14.jpg" alt="Chicago" style=height:100px; style="width:30px;">       
+      <img src="images/jinsss.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+      <img src="images/shos56.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+      
+      </div>
+      
+      <div class="item">
+      <img src="images/4.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+      <img src="images/nike111.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+       <img src="images/shoes44.jpg" alt="Chicago" style=height:100px; style="width:30px;">
+
+
+        
+
+         
       </div>
     </div>
 
