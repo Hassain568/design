@@ -29,11 +29,31 @@
 
                     <h1>للمشاكل والأقتراحات الرجاء مراسلتنا.</h1>
 <br>
+                  
+                  
                    
+<?php 
+include("conn.php");
 
+
+if(@$_POST["Action"] == "saveMessage"){
+	
+	mysqli_query($conn, "INSERT INTO contact (email, message) VALUES('$_POST[email]','$_POST[message]')")or die(mysqli_error($conn));
+ {
+		    ?>
+        <div class="alert alert-success">  تم استلام رسالتك وسيتم التواصل معك قريباً</div>
+        <?php 
+
+    } 
+
+	mysqli_close($conn);
+
+
+    }else{
+?>
                  
                     <form id="contact-form" method="post" action="contact.php" role="form">
-                    	
+                    	<input type="hidden" name="Action" value="saveMessage"> 
                     	 <div class="messages"></div>
 
     <div class="controls">
@@ -71,7 +91,7 @@
                 </div>
 
             </div>
-
+ <?php }    ?>
         </div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>

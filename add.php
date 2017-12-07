@@ -6,7 +6,7 @@ include("conn.php");
 <html dir="rtl">
 
 <head>
-   <title>اضافة صور ملابس</title>
+   <title>إضافة صور ملابس</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,94 +34,81 @@ include("conn.php");
     <div class="container">
 
 
-        <h2 align="center">اضافة صور ملابس</h2>
+        <h2 align="center">إضافة صور ملابس</h2>
 
    
    
 
-          
-          
-        <?php 	
+         
+                     
+                      <?php 	
         if(@$_POST["Action"] == "addCloth"){
             
 $target_dir = "images/uploads/";
 $target_file = $target_dir . basename($_FILES["file"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);	
-		
-			 
-
-			
-			
-
-			
-			
-			
-			
-				
+						
     if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
+        echo "عذراً، الملف موجود من قبل.<br>";
         $uploadOk = 0;
     }
-    // Check file size
+			
     if ($_FILES["file"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
+        echo"عذراً، الملف كبير جداً.<br>";
         $uploadOk = 0;
     }
-    // Allow certain file formats
+			
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed. ";
+        echo "عذراً، يسمح فقط بملفات JPG و JPEG و PNG و GIF.<br>";
         $uploadOk = 0;
     }
-    // Check if $uploadOk is set to 0 by an error
+			
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
-    // if everything is ok, try to upload file
+        echo "عذراً، لم يتم تحميل الملف.<br>";
+		
     } else {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
             $picName = basename( $_FILES["file"]["name"]);          
-            
-            echo "The file $picName has been uploaded.";
-            
-            
+    
 
+ 		            ?>
+            <div class="alert alert-success">تم إضافة الصورة بنجاح.</div>
+            <?php           
+
+			
             mysqli_query($conn, "INSERT INTO clothes (ty_id, details, pic, us_id, date) VALUES(
             '$_POST[label]',
             '$_POST[details]',
             '$picName',
             '$_SESSION[us_id]',
             NOW())");
-            
-            
-            
+                
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            echo "عذراً، حدث خطأ أثناء تحميل ملفك.<br>";
         }
     }            
             
 }
         ?>
+   
+ 
 
 
 
 
 
 
-
-
-
-
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" onSubmit="return checkType()">
             <input type="hidden" name="Action" value="addCloth">
             <div class="row">
                 <div class="col-sm-2">
                     <label class="custom-file">ادخل صورة</label>
                 </div>
                 <div class="col-sm-10">
-                    <input type="file" name="file" id="file" class="custom-file-input">
-                    <span class="custom-file-control"></span>
-
+               <input type="file" name="file" id="file" required  oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('يجب إدخال صورة اللباس')" class="custom-file-input">
+                    <span class="custom-file-control"></span>      
                 </div>
             </div>
             <br>
@@ -136,11 +123,23 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 
                 <div class="col-sm-10">
+<script>
+clIndex = 0
+function checkType(){
 
+	cl = document.querySelector("#cl")
 
-                    <select name="label" id="cl" class="btn btn-primary btn-sm">
+	if(clIndex == 0){
+		cl.setCustomValidity('يجب إدخال نوع اللباس')
+		return false
+	}
+
+}
+</script>
+
+                    <select name="label" id="cl" class="btn btn-primary btn-sm" oninput="setCustomValidity('')" onChange="console.log(clIndex = selectedIndex)">
                             
-                            <option>اختر لباس</option>
+                            <option value="no">اختر لباس</option>
                         
                         <?php
                         
@@ -178,7 +177,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
                     <div class="col-sm-10">
 
-                        <textarea name="details"></textarea>
+                        <textarea name="details" required  oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('يجب إدخال تفاصيل اللباس')"></textarea>
 
 
                     </div>
@@ -193,8 +192,8 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
                 <div class="col-sm-5">
                 </div>
                 <div class="col-sm-7">
-                    <button type="submit" class="btn btn-primary">اضافة</button>
-                    <button type="result" class="btn btn-danger">الغاء</button>
+                    <button type="submit" class="btn btn-primary">إضافة</button>
+                    <button type="result" class="btn btn-danger">إلغاء</button>
                 </div>
             </div>
 

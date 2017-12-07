@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2017 at 12:14 PM
+-- Generation Time: Dec 07, 2017 at 10:38 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.0.23
 
@@ -60,6 +60,25 @@ INSERT INTO `clothes` (`id`, `ty_id`, `details`, `pic`, `us_id`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(9) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `email`, `message`) VALUES
+(7, 'faisal@hotmail.com', 'drgasr');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sets`
 --
 
@@ -78,7 +97,10 @@ CREATE TABLE `sets` (
 
 INSERT INTO `sets` (`id`, `se_name`, `cl_id1`, `cl_id2`, `cl_id3`, `us_id`) VALUES
 (4, 'تجربة طقم', 6, 11, 14, 18),
-(8, 'الطقم 2', 4, 9, 14, 18);
+(8, 'الطقم 2', 4, 9, 14, 18),
+(9, 'Mohammed', 7, 10, 15, 20),
+(10, 'طقم رواف', 5, 11, 15, 8),
+(11, 'نايس', 6, 17, 16, 21);
 
 -- --------------------------------------------------------
 
@@ -122,7 +144,10 @@ INSERT INTO `users` (`id`, `email`, `pass`, `name`, `mobile`) VALUES
 (8, 'gg@gmail.com', 'ggEhKZ7j5puQE', 'gg', '956565645665645'),
 (9, 'abbas@afandy.com', 'abQhLhoyrBZGo', 'Abbas', '3546845834'),
 (18, 'ali@gmail.com', 'alAIbWFoq8G7M', 'Ali', '23423'),
-(19, 'abdrbh@abbas.com', 'ab.dvv.zVP1zE', 'عبدربه', '35135435');
+(19, 'abdrbh@abbas.com', 'ab.dvv.zVP1zE', 'عبدربه', '35135435'),
+(20, 'mohammed@gmail.com', 'mo8SQJQXv8WYs', 'Mohammed', '123'),
+(21, 'faisal@hotmail.com', 'faWHnX5M71HfE', 'faisal', '5455454545'),
+(22, 'mr@gmail.com', 'mrnk1TCh6u4d6', 'sdjksk', '5545757575');
 
 --
 -- Indexes for dumped tables
@@ -132,6 +157,12 @@ INSERT INTO `users` (`id`, `email`, `pass`, `name`, `mobile`) VALUES
 -- Indexes for table `clothes`
 --
 ALTER TABLE `clothes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -160,13 +191,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `clothes`
 --
 ALTER TABLE `clothes`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `sets`
 --
 ALTER TABLE `sets`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `types`
@@ -178,7 +215,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

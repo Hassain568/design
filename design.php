@@ -276,7 +276,8 @@ if(@$_POST["Action"] == "saveSet"){
             <div class="form-group">
                 <label class="control-label col-sm-2" for="kit">اسم الطقم :</label>
                 <div class="col-sm-10">
-                    <input name="setName" type="text" class="form-control" id="kit" placeholder="ادخل اسم الطقم">
+                    <input name="setName" type="text" required oninvalid="this.setCustomValidity('يجب إدخال اسم الطقم')"
+    class="form-control" id="kit" placeholder="ادخل اسم الطقم">
                 </div>
             </div>
 
@@ -295,7 +296,7 @@ if(@$_POST["Action"] == "saveSet"){
                 </div>
                 <div class="col-sm-7">
                     <button type="submit" class="btn btn-primary">حفظ الطقم</button>
-                    <button type="result" class="btn btn-danger">الغاء</button>
+                    <button type="result" class="btn btn-danger">إلغاء</button>
                 </div>
             </div>
         </form>

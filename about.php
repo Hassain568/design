@@ -32,14 +32,38 @@
       <h4 class="media-heading">تم إنشاء هذا التطبيق بواسطة طلاب المشروع في الكلية التقنية ببريدة 1439هـ</h4>
       <p>هذا البرنامج يقوم بمساعدتك على تنسيق ملابسك .</p>
       <br>
-      <p>تم بناء هذا التطبيق من قبل أشراف الاستاذ: محمد العبودي وطلاب المشروع :</p>
+      <p>تم بناء هذا التطبيق تحت إشراف الاستاذ: محمد العبودي وطلاب المشروع :</p>
       
-      <UL>
- <LI>محمد الجويعد
- <LI>فيصل العنزي
- <LI>محمد الحربي
- <LI>رواف الرواف 
- </UL>
+      <ul>
+      
+<script>
+	//هذه العملية ل الترتيب العشوائي للاسماء
+names = new Array("محمد الجويعد","فيصل العنزي","محمد الحربي","رواف الرواف")
+		 
+array = names
+  var arrLngth = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== arrLngth) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * arrLngth);
+    arrLngth -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[arrLngth];
+    array[arrLngth] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+	  
+for(i=0;i<4;i++){
+  document.write("<li>"+ array[i] +"</li>")
+
+}
+</script>
+      
+   
+   </ul>
     </div>
     <div class="media-right">
       <img src="images/tvtc.png" class="media-object" style="width:200px">

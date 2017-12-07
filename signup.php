@@ -16,7 +16,7 @@ include("conn.php");
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
-
+<!--
     <style>
         /* Full-width input fields */
 
@@ -99,6 +99,7 @@ include("conn.php");
         })
 
     </script>
+    -->
 </head>
 
 <body>
@@ -106,8 +107,9 @@ include("conn.php");
     <div class="topnav" id="myTopnav">
         <?php include("nav.php"); ?>
     </div>
+    
     <div class="container">
-        <h2>صفحة تسجيل الدخول</h2>
+       
 
 
 
@@ -135,7 +137,7 @@ $pass = crypt($_POST['pass'],	$email);
     }else{
  ?>
 
-
+<!--
 
         <form action="signup.php" method="post">
             <label><b>الاسم</b></label>
@@ -164,6 +166,85 @@ $pass = crypt($_POST['pass'],	$email);
 
             </div>
         </form>
+        
+-->
+       
+       
+	
+	<form class="form-horizontal"action="signup.php" method="post">
+<fieldset>
+
+<!-- Form Name -->
+<legend>صفحة تسجيل الدخول</legend>
+
+
+
+<!--
+<!-- Text input-->
+
+<div class="form-group">
+
+  <label class="col-md-4 control-label" for="firstname">الإسم</label>  
+  <div class="col-md-5">
+  <input id="firstname" name="name" type="text" placeholder="ادخل الإسم" class="form-control input-md" required>
+    <input type="hidden" name="Action" value="addUser">
+  </div>
+  <div class="col-md-3"></div>
+
+	</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email">الإيميل</label>  
+  <div class="col-md-5">
+  <input id="email" name="email" type="text" placeholder="ادخل ايميلك" name="email" class="form-control input-md" required>  </div>
+  <div class="col-md-3"></div>
+
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="firstname">رقم الجوال</label>  
+  <div class="col-md-5">
+  <input id="firstname" name="mobile" type="text" placeholder="ادخل الإسم" class="form-control input-md" required>
+  <div class="col-md-3"></div>
+    
+  </div>
+</div>
+
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="password">كلمة المرور </label>
+  <div class="col-md-5">
+    <input id="password" name="pass" pattern=".{3,}" title="ثلاث احرف" type="password" placeholder="كلمة المرور" class="form-control input-md" required>
+    <div class="col-md-3"></div>
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="confirmasipassword">اعادة كلمة المرور</label>
+  <div class="col-md-5">
+    <input id="confirmasipassword" name="pswRepeat" type="password" placeholder="اعادة كلمة المرور" class="form-control input-md" required="">
+      <div class="col-md-3"></div>
+   
+  </div>
+</div>
+
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="confirmation"></label>
+  <div class="col-md-4">
+    <button id="confirmation" name="confirmation" class="btn btn-primary">إنشاء الحساب</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+	</div>
 
         <?php }    ?>
 

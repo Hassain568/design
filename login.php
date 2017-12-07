@@ -10,77 +10,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css">
+<link rel="stylesheet" href="css/login.css">
 
-    <script src="js/script.js"></script>
-    <style>
-        form {
-            border: 3px solid #f1f1f1;
-        }
-
-        input[type=text],
-        input[type=password] {
-            width: 100%;
-            padding: 12px 12px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 10px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button:hover {
-            opacity: 0.8;
-        }
-
-        .cancelbtn {
-            width: auto;
-            padding:5px 5px;
-            background-color: #f44336;
-        }
-
-
-        .backbtn {
-            width: auto;
-            padding: 20px 20px;
-            background-color: blue;
-        }
-
-
-
-        .imgcontainer {
-            text-align: center;
-            margin: 24px 0 24px 0;
-        }
-
-
-
-        .container {
-            padding: 20px;
-        }
-
-        span.psw {
-            float: right;
-            padding-top: 20px;
-        }
-
-        /* Change styles for span and cancel button on extra small screens */
-
-  
-            .cancelbtn {
-                width: 100%;
-            }
-        }
-
-    </style>
+    
     <script>
         $(document).ready(function() {
 
@@ -100,6 +32,7 @@
 
 
 <?= @$err ?>
+<!--   
     <form action="add.php" method="post">
 
 
@@ -119,13 +52,35 @@
 
             </div>
 
-
-
-        <span class="psw"> <a href="signup.php">إنشاء حساب?</a></span><br>
+-->
+<div class="row">
+       <div class="col-md-4"></div>
+       <div class="col-md-4">
+        <div class="card card-container">
+            <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin" method="post" action="add.php">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="inputEmail" class="form-control "style="text-align: center" placeholder="ادخل الإيميل" name="user" required autofocus>
+                <input type="password" id="inputPassword" class="form-control"style="text-align: center" placeholder="ادخل كلمة المرور"name="pass" required>
+                <div id="remember" class="checkbox">
+                    
+                </div>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">دخول</button>
+            </form><!-- /form -->
+		<span class="psw"> <a href="signup.php">إنشاء حساب؟</a></span><br>
         <br>
-        <span class="psw"> <a href="#">نسيت كلمة المرور?</a></span>
-    </form>
-</div>
+        <span class="psw"> <a href="#">نسيت كلمة المرور؟</a></span>
+         
+        </div>
+        </div>
+       <div class="col-md-4"></div>        
+        <!-- /card-container -->
+
+   </div>     
+    <!--</form>-->
+    
+</div><!-- /container -->
 </body>
 
 </html>
