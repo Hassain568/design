@@ -50,7 +50,7 @@
         </script>
         <?php 
 
-            $result = mysqli_query($conn,"SELECT * FROM sets");
+            $result = mysqli_query($conn,"SELECT * FROM sets ORDER BY id DESC LIMIT 10");
 
             while($row = mysqli_fetch_assoc($result)){
                 ?>
@@ -60,12 +60,12 @@
 
         <?php 
 
-            $result = mysqli_query($conn,"SELECT s.id, s.se_name, c.pic, c.details FROM sets s INNER JOIN clothes c ON c.id=s.cl_id1 OR c.id=s.cl_id2 OR c.id=s.cl_id3");
+            $result = mysqli_query($conn,"SELECT s.id, s.se_name, c.ty_id, c.pic, c.details FROM sets s INNER JOIN clothes c ON c.id=s.cl_id1 OR c.id=s.cl_id2 OR c.id=s.cl_id3 ORDER BY s.id DESC LIMIT 30");
 
             while($row = mysqli_fetch_assoc($result)){
                 $records[$row["id"]]["id"] = $row["id"];
-                $records[$row["id"]][] = $row['pic'] ;
-                $records[$row["id"]][] = $row['details'] ;
+                $records[$row["id"]][$row['ty_id']+10] = $row['pic'] ;
+                $records[$row["id"]][$row['ty_id']+20] = $row['details'] ;
 
                 $setId = $row["id"];
             } 
@@ -78,11 +78,11 @@ foreach($records as $set){
             <div class="row">
 
                 <div class="col-xs-6" style="text-align: left">
-                    <img src="images/uploads/<?= $set[0] ?>" width="150">
+                    <img src="images/uploads/<?= $set[11] ?>" width="150">
                 </div>
                 <div>
                     <div class="col-xs-6">
-                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[1] ?>"> التفاصيل</a>
+                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[21] ?>"> التفاصيل</a>
                     </div>
                 </div>
             </div>
@@ -90,11 +90,11 @@ foreach($records as $set){
             <div class="row">
 
                 <div class="col-xs-6" style="text-align: left">
-                    <img src="images/uploads/<?= $set[2] ?>" width="150">
+                    <img src="images/uploads/<?= $set[12] ?>" width="150">
                 </div>
                 <div>
                     <div class="col-xs-6">
-                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[3] ?>"> التفاصيل</a>
+                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[22] ?>"> التفاصيل</a>
                     </div>
                 </div>
             </div>
@@ -102,11 +102,11 @@ foreach($records as $set){
             <div class="row">
 
                 <div class="col-xs-6" style="text-align: left">
-                    <img src="images/uploads/<?= $set[4] ?>" width="150">
+                    <img src="images/uploads/<?= $set[13] ?>" width="150">
                 </div>
                 <div>
                     <div class="col-xs-6">
-                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[5] ?>"> التفاصيل</a>
+                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[23] ?>"> التفاصيل</a>
                     </div>
                 </div>
             </div>

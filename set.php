@@ -11,10 +11,10 @@ include("conn.php");
     <title>أطقمي</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 
@@ -65,12 +65,12 @@ include("conn.php");
 
         <?php 
 
-            $result = mysqli_query($conn,"SELECT s.id, s.se_name, c.pic, c.details FROM sets s INNER JOIN clothes c ON c.id=s.cl_id1 OR c.id=s.cl_id2 OR c.id=s.cl_id3 WHERE s.us_id='$_SESSION[us_id]'");
+            $result = mysqli_query($conn,"SELECT s.id, s.se_name, c.ty_id, c.pic, c.details FROM sets s INNER JOIN clothes c ON c.id=s.cl_id1 OR c.id=s.cl_id2 OR c.id=s.cl_id3 WHERE s.us_id='$_SESSION[us_id]'");
 
             while($row = mysqli_fetch_assoc($result)){
                 $records[$row["id"]]["id"] = $row["id"];
-                $records[$row["id"]][] = $row['pic'] ;
-				$records[$row["id"]][] = $row['details'] ;
+                $records[$row["id"]][$row['ty_id']+10] = $row['pic'] ;
+				$records[$row["id"]][$row['ty_id']+20] = $row['details'] ;
 
                 $setId = $row["id"];
             } 
@@ -84,11 +84,11 @@ foreach($records as $set){
             <div class="row">
 
                 <div class="col-xs-6" style="text-align: left">
-                    <img src="images/uploads/<?= $set[0] ?>" width="150">
+                    <img src="images/uploads/<?= $set[11] ?>" width="150">
                 </div>
                 <div>
                     <div class="col-xs-6">
-                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[1] ?>"> التفاصيل</a>
+                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[21] ?>"> التفاصيل</a>
                     </div>
                 </div>
             </div>
@@ -96,11 +96,11 @@ foreach($records as $set){
             <div class="row">
 
                 <div class="col-xs-6" style="text-align: left">
-                    <img src="images/uploads/<?= $set[2] ?>" width="150">
+                    <img src="images/uploads/<?= $set[12] ?>" width="150">
                 </div>
                 <div>
                     <div class="col-xs-6">
-                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[3] ?>"> التفاصيل</a>
+                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[22] ?>"> التفاصيل</a>
                     </div>
                 </div>
             </div>
@@ -108,11 +108,11 @@ foreach($records as $set){
             <div class="row">
 
                 <div class="col-xs-6" style="text-align: left">
-                    <img src="images/uploads/<?= $set[4] ?>" width="150">
+                    <img src="images/uploads/<?= $set[13] ?>" width="150">
                 </div>
                 <div>
                     <div class="col-xs-6">
-                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[5] ?>"> التفاصيل</a>
+                        <a href="#" data-placement="left" id="popover" data-toggle="popover" data-content="<?= $set[23] ?>"> التفاصيل</a>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ if(@$_POST["Action"] == "saveSet"){
             '$_POST[cl_id2]',
             '$_POST[cl_id3]',
             '$_SESSION[us_id]')");
-	
+	header("location: set.php");
 }
 
 
@@ -24,12 +24,13 @@ if(@$_POST["Action"] == "saveSet"){
     <title>اختيار تصميم ملابس</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
+
     <script>
         $(document).ready(function() {
 
@@ -276,8 +277,7 @@ if(@$_POST["Action"] == "saveSet"){
             <div class="form-group">
                 <label class="control-label col-sm-2" for="kit">اسم الطقم :</label>
                 <div class="col-sm-10">
-                    <input name="setName" type="text" required oninvalid="this.setCustomValidity('يجب إدخال اسم الطقم')"
-    class="form-control" id="kit" placeholder="ادخل اسم الطقم">
+                    <input name="setName" type="text" required oninvalid="this.setCustomValidity('يجب إدخال اسم الطقم')" class="form-control" id="kit" placeholder="ادخل اسم الطقم">
                 </div>
             </div>
 
@@ -296,7 +296,7 @@ if(@$_POST["Action"] == "saveSet"){
                 </div>
                 <div class="col-sm-7">
                     <button type="submit" class="btn btn-primary">حفظ الطقم</button>
-                    <button type="result" class="btn btn-danger">إلغاء</button>
+                    <button type="reset" class="btn btn-danger">إلغاء</button>
                 </div>
             </div>
         </form>

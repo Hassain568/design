@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2017 at 10:38 AM
+-- Generation Time: Dec 14, 2017 at 07:38 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.0.23
 
@@ -55,7 +55,8 @@ INSERT INTO `clothes` (`id`, `ty_id`, `details`, `pic`, `us_id`, `date`) VALUES
 (14, '3', 'حصري بالعثيم مول', 'shoes44.jpg', '18', '2017-11-30 09:46:38'),
 (15, '3', 'اشتريته من محل الحسون سنتر', 'shos56.jpg', '18', '2017-11-30 09:47:30'),
 (16, '3', 'الحذاء حصري لمحل المتجر الرياضي', 'Sport-Shoes.jpg', '18', '2017-11-30 09:48:21'),
-(17, '2', 'يوجد عند محل فالنسيا للرياضة', 'srwal88.jpg', '18', '2017-11-30 09:51:57');
+(17, '2', 'يوجد عند محل فالنسيا للرياضة', 'srwal88.jpg', '18', '2017-11-30 09:51:57'),
+(19, '1', 'الحسون', 'ima1ges.jpg', '21', '2017-12-14 09:03:11');
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,8 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`id`, `email`, `message`) VALUES
-(7, 'faisal@hotmail.com', 'drgasr');
+(7, 'faisal@hotmail.com', 'drgasr'),
+(8, 'faisal@hotmail.com', '1223');
 
 -- --------------------------------------------------------
 
@@ -100,7 +102,10 @@ INSERT INTO `sets` (`id`, `se_name`, `cl_id1`, `cl_id2`, `cl_id3`, `us_id`) VALU
 (8, 'الطقم 2', 4, 9, 14, 18),
 (9, 'Mohammed', 7, 10, 15, 20),
 (10, 'طقم رواف', 5, 11, 15, 8),
-(11, 'نايس', 6, 17, 16, 21);
+(11, 'نايس', 6, 17, 16, 21),
+(12, 'الطقم الثالث', 5, 11, 15, 18),
+(13, 'good', 4, 17, 15, 21),
+(14, '12', 6, 11, 15, 21);
 
 -- --------------------------------------------------------
 
@@ -147,7 +152,8 @@ INSERT INTO `users` (`id`, `email`, `pass`, `name`, `mobile`) VALUES
 (19, 'abdrbh@abbas.com', 'ab.dvv.zVP1zE', 'عبدربه', '35135435'),
 (20, 'mohammed@gmail.com', 'mo8SQJQXv8WYs', 'Mohammed', '123'),
 (21, 'faisal@hotmail.com', 'faWHnX5M71HfE', 'faisal', '5455454545'),
-(22, 'mr@gmail.com', 'mrnk1TCh6u4d6', 'sdjksk', '5545757575');
+(22, 'mr@gmail.com', 'mrnk1TCh6u4d6', 'sdjksk', '5545757575'),
+(23, 'mr.rar@hotmail.com', 'mrnk1TCh6u4d6', 'rawaf', '532131265218');
 
 --
 -- Indexes for dumped tables
@@ -191,19 +197,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `clothes`
 --
 ALTER TABLE `clothes`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `sets`
 --
 ALTER TABLE `sets`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `types`
@@ -215,7 +221,7 @@ ALTER TABLE `types`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

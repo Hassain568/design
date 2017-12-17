@@ -7,12 +7,12 @@ include("conn.php");
 
 <head>
    <title>إضافة صور ملابس</title>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
     <script>
@@ -104,7 +104,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
             <input type="hidden" name="Action" value="addCloth">
             <div class="row">
                 <div class="col-sm-2">
-                    <label class="custom-file">ادخل صورة</label>
+                    <label class="custom-file">ادخل صورة :</label>
                 </div>
                 <div class="col-sm-10">
                <input type="file" name="file" id="file" required  oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('يجب إدخال صورة اللباس')" class="custom-file-input">
@@ -118,7 +118,7 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
             <div class="row">
                 <div class="col-sm-2">
-                    <label for="cl">نوع اللباس</label>
+                    <label for="cl">نوع اللباس :</label>
                 </div>
 
 
@@ -139,7 +139,7 @@ function checkType(){
 
                     <select name="label" id="cl" class="btn btn-primary btn-sm" oninput="setCustomValidity('')" onChange="console.log(clIndex = selectedIndex)">
                             
-                            <option value="no">اختر لباس</option>
+                            <option hidden="false" value="no">اختر لباس</option>
                         
                         <?php
                         
@@ -168,7 +168,7 @@ function checkType(){
                 <div class="bd-example" data-example-id="">
                     <div class="col-sm-2">
                         <div class="form-group">
-                            <label for="fo">التفاصيل</label>
+                            <label for="fo">التفاصيل :</label>
                         </div>
                     </div>
 
@@ -192,8 +192,8 @@ function checkType(){
                 <div class="col-sm-5">
                 </div>
                 <div class="col-sm-7">
-                    <button type="submit" class="btn btn-primary">إضافة</button>
-                    <button type="result" class="btn btn-danger">إلغاء</button>
+			<button type="submit" class="btn btn-primary">إضافة</button>
+			<button type="reset" class="btn btn-danger">إلغاء</button>
                 </div>
             </div>
 

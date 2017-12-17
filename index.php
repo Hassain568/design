@@ -7,104 +7,108 @@ if(@$_GET["do"] == "logOut"){
 } 
 ?>
 <html>
+
 <head>
-  <title>الرئيسيه</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/style.css">
+    <title>الرئيسيه</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 
     <script>
-    $(document).ready(function(){
-        
-        
-    })
+        $(document).ready(function() {
+
+
+        })
+
     </script>
 </head>
+
 <body>
 
-<div class="topnav" id="myTopnav"><?php include("nav.php"); ?></div>
-
-    
-    
-    
- 
-<div class="container">
-  <h2>اخر التصاميم</h2>  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-       <li data-target="#myCarousel" data-slide-to="3"></li>
-        <li data-target="#myCarousel" data-slide-to="4"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-       
-      </div>
-
-      <div class="item">
-        <img src="images/1.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-        <img src="images/jeans_black.png" alt="Chicago" style=height:100px; style="width:30px;">
-        <img src="images/Sport-Shoes.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-        
-        
-      </div>
-    
-      <div class="item">
-      <img src="images/14.jpg" alt="Chicago" style=height:100px; style="width:30px;">       
-      <img src="images/srwal88.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-      <img src="images/sho02.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-      
-      </div>
-      
-   
-      <div class="item">
-      <img src="images/14.jpg" alt="Chicago" style=height:100px; style="width:30px;">       
-      <img src="images/jinsss.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-      <img src="images/shos56.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-      
-      </div>
-      
-      <div class="item">
-      <img src="images/4.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-      <img src="images/nike111.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-       <img src="images/shoes44.jpg" alt="Chicago" style=height:100px; style="width:30px;">
-
-
-        
-
-         
-      </div>
+    <div class="topnav" id="myTopnav">
+        <?php include("nav.php"); ?>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+
+
+
+
+    <div class="container">
+        <h2>اخر التصاميم</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+
+                <style>
+                    .item img {
+                        margin: auto;
+                    }
+
+                </style>
+
+                <?php 
+include("conn.php");
+            $result = mysqli_query($conn,"SELECT s.id, s.se_name, c.ty_id, c.pic, c.details FROM sets s INNER JOIN clothes c ON c.id=s.cl_id1 OR c.id=s.cl_id2 OR c.id=s.cl_id3 ORDER BY s.id DESC LIMIT 15");
+
+            while($row = mysqli_fetch_assoc($result)){
+                $records[$row["id"]]["id"] = $row["id"];
+                $records[$row["id"]][$row['ty_id']+10] = $row['pic'] ;
+                $records[$row["id"]][$row['ty_id']+20] = $row['details'] ;
+
+                
+                $setId = $row["id"];
+
+                
+            }
+$Active = " active";
+foreach($records as $set){
+
+?>
+
+                <div class="item<?=$Active?>">
+                    <img src="images/uploads/<?= $set[11] ?>" width="150">
+                    <img src="images/uploads/<?= $set[12] ?>" width="150">
+                    <img src="images/uploads/<?= $set[13] ?>" width="150">
+                </div>
+                <?php 
+$Active = "";
+} ?>
+
+
+
+
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
-</div>
+        </div>
+    </div>
 
-  
- 
- 
+
+
+
 
 
 
 
 
 </body>
+
 </html>
